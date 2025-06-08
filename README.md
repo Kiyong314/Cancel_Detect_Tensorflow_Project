@@ -1,4 +1,4 @@
-# 사용방법
+# 1. 사용방법
             
 img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
 img = cv2.resize(img, (512, 512))
@@ -16,7 +16,7 @@ final_result = img_normalized * tertiary_mask
 
 
 
-# 폐 분할 알고리즘 코드 분석
+# 2. 폐 분할 알고리즘 코드 분석
 
 ## 개요
 이 코드는 X-ray 흉부 이미지에서 폐 영역을 자동으로 추출하는 **4단계 필터링 폐 분할 알고리즘**입니다. 의료 영상 처리에서 중요한 전처리 단계로 사용됩니다.
