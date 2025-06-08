@@ -4,13 +4,13 @@ img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
 img = cv2.resize(img, (512, 512))
 img_normalized = img / 255.0
 
-# 1-2차 처리 (기존 방식)
+## 1-2차 처리 (기존 방식)
 primary_mask, secondary_mask, _, _ = improved_weighted_average_segmentation(img_normalized)
 
-# 3차 처리 (개선된 방식)
+## 3차 처리 (개선된 방식)
 tertiary_mask = apply_tertiary_filtering_improved(secondary_mask)
 
-# 4차 처리
+## 4차 처리
 final_result = img_normalized * tertiary_mask
 
 
