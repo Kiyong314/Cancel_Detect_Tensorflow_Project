@@ -189,20 +189,4 @@ tertiary_mask = apply_tertiary_filtering_fallback(secondary_mask)
 - scikit-image Documentation
 - 의료 영상 분할 관련 논문들
 
-## 🤝 기여하기
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## 📄 라이선스
-
-MIT License
-
----
-
-**개발자**: [Your Name]  
-**버전**: 2.0  
-**최종 업데이트**: 2024년 6월
