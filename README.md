@@ -7,3 +7,8 @@ tensorflow_server_sample.ipynb
 
 ## 3. 모델 다운로드 .h5 
 https://1drv.ms/u/c/569427496c35eba0/EVn5Jsm6ZxtBpyllCoElqWEBoMRvTBCpeU6YHd-xS_zbEA?e=1RWShq
+
+
+![image](https://github.com/Kiyong314/Cancel_Detect_Tensorflow_Project/blob/main/asset/01.jpg)
+![image](https://github.com/Kiyong314/Cancel_Detect_Tensorflow_Project/blob/main/asset/02.jpg)
+![image](https://github.com/Kiyong314/Cancel_Detect_Tensorflow_Project/blob/main/asset/03.jpg)
