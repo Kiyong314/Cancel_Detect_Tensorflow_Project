@@ -3,3 +3,4 @@
 
 ## 2. 서버 
 컴퓨터에서 jupyter로 실행
+tensorflow_server_sample.ipynb
