@@ -4,3 +4,6 @@
 ## 2. 서버 
 컴퓨터에서 jupyter로 실행
 tensorflow_server_sample.ipynb
+
+## 3. 모델 다운로드 .h5 
+https://1drv.ms/u/c/569427496c35eba0/EVn5Jsm6ZxtBpyllCoElqWEBoMRvTBCpeU6YHd-xS_zbEA?e=1RWShq
