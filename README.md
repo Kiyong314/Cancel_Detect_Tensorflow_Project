@@ -6,9 +6,6 @@
 tensorflow_server_sample.ipynb
 
 ## 3. 모델 다운로드 .h5 
--v2용
-https://1drv.ms/u/c/569427496c35eba0/EVn5Jsm6ZxtBpyllCoElqWEBoMRvTBCpeU6YHd-xS_zbEA?e=1RWShq
-
 -v3용
 https://1drv.ms/u/c/569427496c35eba0/ESexvZPx5ZpGuLGWfM85lsABvGfzE_iztVHzJjp-oI2aww?e=GQQYut
 
