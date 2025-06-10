@@ -5,7 +5,8 @@
 컴퓨터에서 jupyter로 실행
 tensorflow_server_sample.ipynb
 
-
+## 3. .h5 파일
+https://1drv.ms/u/c/569427496c35eba0/ESexvZPx5ZpGuLGWfM85lsABvGfzE_iztVHzJjp-oI2aww?e=XmG7S1
 
 ##이미지
 ![image](./asset/img06.png)
