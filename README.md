@@ -16,4 +16,3 @@ https://1drv.ms/u/c/569427496c35eba0/ESexvZPx5ZpGuLGWfM85lsABvGfzE_iztVHzJjp-oI2
 ##이미지
 ![image](https://github.com/Kiyong314/Cancel_Detect_Tensorflow_Project/blob/main/asset/01.jpg)
 ![image](https://github.com/Kiyong314/Cancel_Detect_Tensorflow_Project/blob/main/asset/02.jpg)
-![image](https://github.com/Kiyong314/Cancel_Detect_Tensorflow_Project/blob/main/asset/03.jpg)
