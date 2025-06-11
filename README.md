@@ -1,3 +1,5 @@
+pip install opencv-python flask Pillow
+
 ## 1. 최종
 코랩 - 텐활기_기말고사_실습_250527_v2_Pre+Train 
 
