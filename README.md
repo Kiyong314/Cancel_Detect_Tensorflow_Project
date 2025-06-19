@@ -1,3 +1,8 @@
+1.텐활기_기말고사_실습_250527_v3_Pre+Train_local 파일 추가
+-> 로컬 학습
+
+전처리 수정, 그래드캠 수정 , 트레이닝 시 lr스케쥴러, 약간의 데이터 증강 사용
+
 pip install opencv-python flask Pillow
 
 ## 1. 최종
