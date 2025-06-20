@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FocusNet-LC 폐암 진단</title>
+    <title>AIBreezScan 폐암 진단</title>
     <style>
         * {
             margin: 0;
@@ -1073,7 +1073,7 @@
             
             const agreementStatus = document.getElementById('agreementStatus');
             if (aiVsDoctor.agreement) {
-                agreementStatus.textContent = '✅ AI와 의사 진단이 일치합니다';
+                agreementStatus.textContent = '✅AI와 의사 진단이 일치합니다';
                 agreementStatus.className = 'agreement-status agreement-true';
             } else {
                 agreementStatus.textContent = '⚠️ AI와 의사 진단이 다릅니다 (의사 진단을 우선적용)';

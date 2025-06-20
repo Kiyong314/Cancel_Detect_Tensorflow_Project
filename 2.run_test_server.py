@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-FocusNet-LC 웹 인터페이스 - 폐암 진단, Grad-CAM 시각화, 의사 진단, 예약 및 개인화된 건강 권고
+ 웹 인터페이스 - 폐암 진단, Grad-CAM 시각화, 의사 진단, 예약 및 개인화된 건강 권고
 """
 
 import os
@@ -610,6 +610,7 @@ def make_multi_layer_gradcam_heatmap(img_array, model, layer_names, weights=None
         heatmap = tf.squeeze(heatmap)
         heatmap = tf.maximum(heatmap, 0)
 
+    
         # 정규화
         if tf.math.reduce_max(heatmap) > 0:
             heatmap = heatmap / tf.math.reduce_max(heatmap)
@@ -632,7 +633,8 @@ def make_multi_layer_gradcam_heatmap(img_array, model, layer_names, weights=None
     combined_heatmap = np.zeros_like(resized_heatmaps[0])
     for i, heatmap in enumerate(resized_heatmaps):
         combined_heatmap += weights[i] * heatmap
-    
+    if(np.max(combined_heatmap) >1):
+        combined_heatmap = combined_heatmap / np.max(combined_heatmap)
     return combined_heatmap, individual_heatmaps
 
 def get_conv_layer_names(model, top_n=3):
@@ -666,7 +668,7 @@ try:
 
     model.summary()
     # 웨이트 로드
-    model.load_weights(h5_path, by_name=True)
+    model.load_weights(h5_path) #, by_name=True)
     
     
     print("✅ 모델 로드 완료!")
@@ -720,13 +722,13 @@ def predict():
             print("Top conv layers:", top_conv_layers)
             
             # 각 레이어에 다른 가중치 부여 (최상위 레이어에 더 높은 가중치)
-            layer_weights = [0.2, 0.2, 0.2,0.2,0.2,0.2]  # 최상위, 중간, 하위 순서
+            layer_weights = [2, 3, 3,2, 2, 5]  # 최상위, 중간, 하위 순서
             
             # 다중 레이어 Grad-CAM 시각화
             combined_heatmap, individual_heatmaps = make_multi_layer_gradcam_heatmap(img_array, model, top_conv_layers, weights=layer_weights)
        
             gradcam_img = create_gradcam_image(original_img, individual_heatmaps[-1])
-                
+            
             # 이미지를 base64로 인코딩
             _, buffer = cv2.imencode('.png', gradcam_img)
             gradcam_b64 = base64.b64encode(buffer).decode('utf-8')
@@ -856,7 +858,7 @@ HTML_TEMPLATE = """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FocusNet-LC 폐암 진단</title>
+    <title>AIBreezScan 폐암 진단</title>
     <style>
         * {
             margin: 0;
@@ -1925,7 +1927,7 @@ HTML_TEMPLATE = """
             
             const agreementStatus = document.getElementById('agreementStatus');
             if (aiVsDoctor.agreement) {
-                agreementStatus.textContent = '✅ AI와 의사 진단이 일치합니다';
+                agreementStatus.textContent = '✅AI와 의사 진단이 일치합니다';
                 agreementStatus.className = 'agreement-status agreement-true';
             } else {
                 agreementStatus.textContent = '⚠️ AI와 의사 진단이 다릅니다 (의사 진단을 우선적용)';
@@ -1998,15 +2000,15 @@ with open(os.path.join(template_dir, 'index.html'), 'w', encoding='utf-8') as f:
 
 if __name__ == '__main__':
     if model is None:
-        print("❌ 모델을 로드할 수 없어 서버를 시작할 수 없습니다.")
+        print(" 모델을 로드할 수 없어 서버를 시작할 수 없습니다.")
     else:
-        print("🚀 서버 시작 중...")
-        print("📝 개선된 전처리 알고리즘이 적용되었습니다.")
-        print("🎯 Grad-CAM이 원본 이미지에 오버레이됩니다.")
-        print("⚠️  전처리 실패 시 관리자 알림 기능이 활성화되었습니다.")
-        print("🩺 의사 진단 입력 기능이 추가되었습니다.")
-        print("📋 설문조사 및 예약 기능이 추가되었습니다.")
-        print("💡 주요 개선사항:")
+        print(" 서버 시작 중...")
+        print(" 개선된 전처리 알고리즘이 적용되었습니다.")
+        print(" Grad-CAM이 원본 이미지에 오버레이됩니다.")
+        print("  전처리 실패 시 관리자 알림 기능이 활성화되었습니다.")
+        print(" 의사 진단 입력 기능이 추가되었습니다.")
+        print(" 설문조사 및 예약 기능이 추가되었습니다.")
+        print(" 주요 개선사항:")
         print("   - AI 예측 → 의사 진단 → 설문조사 → 권고사항 + 예약완료 워크플로우")
         print("   - AI vs 의사 진단 비교 및 일치/불일치 표시")
         print("   - 의사 소견 및 다음 진료 필요성 판단")
