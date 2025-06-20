@@ -18,3 +18,6 @@ https://1drv.ms/u/c/569427496c35eba0/ESexvZPx5ZpGuLGWfM85lsABvGfzE_iztVHzJjp-oI2
 ![image](./asset/img06.png)
 ![image](./asset/img08.png)
 ![image](./asset/img07.png)
+
+
+alyasriy, hamdalla; AL-Huseiny, Muayed (2023), “The IQ-OTH/NCCD lung cancer dataset”, Mendeley Data, V4, doi: 10.17632/bhmdr45bh2.4
